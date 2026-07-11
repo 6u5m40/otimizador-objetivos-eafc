@@ -1,0 +1,11 @@
+{
+  "name": "otimizador-objetivos-eafc",
+  "version": "1.0.0",
+  "description": "Otimizador de Objetivos EAFC — extensão Chrome para EA FC (FUT.GG/FUTBIN) com otimizador de partidas, sincronização, tradução e monitor de saúde.",
+  "type": "module",
+  "scripts": {
+    "healthcheck": "node tools/healthcheck.mjs",
+    "build": "cd extension && zip -r -q ../eafc-objetivos-extensao.zip . -x '*.DS_Store'"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,26 @@
+name: Build extensão (.zip)
+
+# Gera o .zip instalável da extensão a cada push na main (e sob demanda).
+# Baixe o artefato "eafc-objetivos-extensao" na aba Actions do run.
+on:
+  push:
+    branches: [main]
+    paths: ["extension/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Empacotar extensão
+        run: |
+          cd extension
+          zip -r -q ../eafc-objetivos-extensao.zip . -x '*.DS_Store'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eafc-objetivos-extensao
+          path: eafc-objetivos-extensao.zip

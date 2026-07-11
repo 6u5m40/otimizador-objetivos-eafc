@@ -1,0 +1,63 @@
+name: Health check (monitor FUT.GG)
+
+# Roda todo dia e permite disparo manual. Se os parsers/API do FUT.GG
+# quebrarem, abre (ou atualiza) uma issue marcando o @claude para consertar,
+# e falha o job (o GitHub te avisa por e-mail).
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 12:00 UTC (~09:00 São Paulo) todo dia
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "extension/src/extract.js"
+      - "extension/src/content.js"
+      - "tools/healthcheck.mjs"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Rodar health check
+        id: hc
+        continue-on-error: true
+        run: node tools/healthcheck.mjs
+
+      - name: Abrir/atualizar issue se quebrou
+        if: steps.hc.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '(sem diagnóstico)';
+            try { body = fs.readFileSync('diagnostics.md', 'utf8'); } catch (e) {}
+            const marker = '<!-- eafc-auto-breakage -->';
+            body = marker + '\n\n' + body;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'auto-breakage'
+            });
+            if (issues.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: issues[0].number,
+                body: 'O health check falhou de novo:\n\n' + body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: '[auto] Extensão quebrou — health check falhou',
+                labels: ['auto-breakage', 'bug'],
+                body
+              });
+            }
+
+      - name: Falhar o job se quebrou (para o e-mail)
+        if: steps.hc.outcome == 'failure'
+        run: exit 1

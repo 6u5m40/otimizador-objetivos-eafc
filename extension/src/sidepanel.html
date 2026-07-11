@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otimizador de Objetivos EAFC</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <!-- ============== ONBOARDING (primeira vez) ============== -->
+  <div id="onboard" class="onboard hidden">
+    <div class="onboard-card">
+      <div class="onboard-logo">🎮</div>
+      <h2 data-i18n="onboard_title">Primeiro: importe o seu progresso do jogo</h2>
+      <p class="onboard-lead" data-i18n="onboard_lead"></p>
+      <ol class="onboard-steps">
+        <li data-i18n="onboard_step1"></li>
+        <li data-i18n="onboard_step2"></li>
+        <li data-i18n="onboard_step3"></li>
+      </ol>
+      <button id="onboard-import" class="btn btn-primary onboard-btn" data-i18n="onboard_import">🎮 Importar do jogo</button>
+      <div id="onboard-status" class="onboard-status"></div>
+      <a id="onboard-skip" class="onboard-skip" data-i18n="onboard_skip">pular por agora</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚽</span>
+      <div>
+        <h1>Otimizador de Objetivos EAFC</h1>
+        <div id="source" class="source">Carregando…</div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button id="import-top" class="btn btn-primary import-top-btn" data-i18n="import_game" data-i18n-title="import_game_title"></button>
+      <button id="lang-toggle" class="lang-btn" title="Trocar idioma / Switch language">EN</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="opt"><span data-i18n="optimizer">🎯 Otimizador</span></button>
+    <button class="tab" data-tab="list"><span data-i18n="objectives">📋 Objetivos</span> <span id="sel-badge" class="badge hidden">0</span></button>
+  </nav>
+
+  <!-- ================= OTIMIZADOR ================= -->
+  <section id="tab-opt" class="tabpanel active">
+    <div id="opt-empty" class="empty">
+      <p><b data-i18n="opt_empty_title">Nenhum objetivo selecionado.</b></p>
+      <p class="muted" data-i18n-html="opt_empty_body"></p>
+    </div>
+
+    <div id="opt-content" class="hidden">
+      <div class="cards-row">
+        <div class="stat">
+          <div class="stat-num" id="stat-total">0</div>
+          <div class="stat-lbl" data-i18n="stat_total">partidas p/ concluir</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="stat-saved">0</div>
+          <div class="stat-lbl" data-i18n="stat_saved">partidas economizadas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="stat-count">0</div>
+          <div class="stat-lbl" data-i18n="stat_count">objetivos ativos</div>
+        </div>
+      </div>
+
+      <div class="plan-head">
+        <h2 data-i18n="h_plan">Plano de partidas</h2>
+        <button id="reimport-btn" class="mini use" data-i18n="reimport" data-i18n-title="reimport_title"></button>
+      </div>
+      <div id="mode-plan" class="mode-plan"></div>
+
+      <h2 data-i18n="h_squad">Sugestão dos 11 titulares</h2>
+      <p class="muted small" data-i18n="squad_help"></p>
+      <div id="squad" class="squad"></div>
+      <div id="squad-warn" class="warn hidden"></div>
+    </div>
+  </section>
+
+  <!-- ================= LISTA ================= -->
+  <section id="tab-list" class="tabpanel">
+    <div id="list-loading" class="empty hidden"><p class="muted">…</p></div>
+
+    <div class="toolbar">
+      <input id="search" type="text" data-i18n-ph="filter_ph" placeholder="filtrar" />
+    </div>
+    <div class="quick">
+      <button id="q-week" class="mini use" data-i18n="q_week">⏳ expira em 7d</button>
+      <button id="q-all" class="mini" data-i18n="q_all">todos ativos</button>
+      <button id="clear-sel" class="mini" data-i18n="q_clear">limpar seleção</button>
+    </div>
+    <div id="modes-filter" class="modes-filter"></div>
+    <div id="sync-bar" class="sync-bar"></div>
+
+    <div id="obj-groups" class="obj-groups"></div>
+  </section>
+
+  <div id="report-box" class="report-box hidden">
+    <textarea id="report-note" rows="3" data-i18n-ph="report_ph" placeholder="Descreva o problema"></textarea>
+    <div class="report-actions">
+      <button id="report-send" class="btn btn-primary" data-i18n="report_send">Enviar</button>
+      <button id="report-cancel" class="mini" data-i18n="report_cancel">cancelar</button>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <a id="refresh" class="refresh-link" data-i18n="footer_refresh">↻ atualizar agora</a>
+    <a id="report-open" class="report-link" data-i18n="report_open">🐞 relatar problema</a>
+    <span class="muted small" data-i18n="footer_note"></span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="i18n.js"></script>
+  <script src="extract.js"></script>
+  <script src="parser.js"></script>
+  <script src="optimizer.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
