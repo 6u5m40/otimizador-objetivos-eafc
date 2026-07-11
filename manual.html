@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de Uso — Otimizador de Objetivos EAFC</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Roboto, system-ui, sans-serif; max-width: 820px;
+    margin: 0 auto; padding: 40px 22px 90px; line-height: 1.65; color: #1a1a1a; background: #fff; }
+  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #121212; } a { color: #6ca8ff; }
+    .card { background: #1b1b1f !important; border-color: #2a2a30 !important; } code { background: #2a2a30 !important; } }
+  header.top { text-align: center; margin-bottom: 10px; }
+  .logo { font-size: 46px; }
+  .pill { display:inline-block; background: rgba(0,224,164,.15); border:1px solid rgba(0,224,164,.45);
+    color:#0a9c74; font-weight:800; font-size:12px; padding:4px 12px; border-radius:30px; letter-spacing:.03em; }
+  h1 { font-size: 2rem; margin: 12px 0 4px; text-align:center; }
+  .lead { text-align:center; color:#888; margin-bottom: 30px; }
+  h2 { font-size: 1.3rem; margin-top: 40px; border-bottom: 2px solid #00e0a433; padding-bottom: 6px; }
+  h3 { font-size: 1.08rem; margin-top: 24px; }
+  code { background: #f0f0f2; padding: 1px 6px; border-radius: 4px; font-size: .92em; }
+  ol, ul { padding-left: 22px; }
+  li { margin: 5px 0; }
+  .card { background: #f7f8fa; border: 1px solid #e6e8ee; border-radius: 12px; padding: 16px 18px; margin: 16px 0; }
+  .tip { border-left: 4px solid #00e0a4; }
+  .warn { border-left: 4px solid #f0b429; }
+  .toc a { display:inline-block; margin: 3px 10px 3px 0; font-size: .95rem; }
+  .foot { margin-top: 50px; padding-top: 18px; border-top: 1px solid #8883; font-size: .85rem; color: #888; text-align:center; }
+  .step-num { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px;
+    background:#00e0a4; color:#04241b; border-radius:50%; font-weight:800; font-size:13px; margin-right:6px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="logo">⚽🎯</div>
+  <div class="pill">MANUAL DE USO · BETA</div>
+  <h1>Otimizador de Objetivos EAFC</h1>
+  <p class="lead">Como usar a extensão pra completar seus objetivos do EA FC Ultimate Team em menos partidas.</p>
+</header>
+
+<div class="toc card">
+  <strong>Índice</strong><br>
+  <a href="#oque">O que é</a>
+  <a href="#instalar">Instalação</a>
+  <a href="#primeiro">Primeiro uso</a>
+  <a href="#objetivos">Aba Objetivos</a>
+  <a href="#otimizador">Aba Otimizador</a>
+  <a href="#sync">Sincronização</a>
+  <a href="#privacidade">Privacidade</a>
+  <a href="#duvidas">Dúvidas comuns</a>
+</div>
+
+<h2 id="oque">O que é</h2>
+<p>O <strong>Otimizador de Objetivos EAFC</strong> é uma extensão do Chrome que aparece no painel lateral
+do navegador. Ela lê todos os seus objetivos do EA FC Ultimate Team, monta um checklist organizado e —
+o mais importante — calcula a <strong>melhor combinação de partidas e time</strong> pra você completar o
+máximo de objetivos jogando o mínimo possível.</p>
+
+<h2 id="instalar">Instalação</h2>
+<ol>
+  <li>Instale a extensão pela Chrome Web Store.</li>
+  <li>Fixe ela na barra do Chrome (clique no ícone de peça de quebra-cabeça → alfinete ao lado do
+      "Otimizador de Objetivos EAFC").</li>
+  <li>Clique no ícone da extensão pra abrir o <strong>painel lateral</strong>.</li>
+</ol>
+
+<h2 id="primeiro">Primeiro uso — Importar do Jogo</h2>
+<p>Pra extensão saber o que você já concluiu, o primeiro passo é <strong>importar seus dados do jogo</strong>.
+Isso garante que ela não te mande jogar partidas que você já fez.</p>
+<ol>
+  <li><span class="step-num">1</span> Abra o <strong>EA Web App</strong> (o Ultimate Team no navegador) e faça login normalmente.</li>
+  <li><span class="step-num">2</span> Abra o painel da extensão e clique em <strong>🎮 Importar do Jogo</strong> (botão no topo).</li>
+  <li><span class="step-num">3</span> Pronto — ela lê seus objetivos e o progresso atual (inclusive parciais, tipo "faltam 3 de 9 partidas").</li>
+</ol>
+<div class="card tip">💡 <strong>Dica:</strong> sempre que ganhar novos objetivos ou avançar bastante no jogo, use o
+botão <strong>🎮 reimportar</strong> (no Otimizador) pra atualizar. Ele mantém os mesmos objetivos que você
+já tinha selecionado.</div>
+
+<h2 id="objetivos">Aba Objetivos</h2>
+<p>É o seu checklist completo, organizado por categoria (Temporada, campanhas, países, etc.). Cada objetivo mostra:</p>
+<ul>
+  <li>A <strong>descrição</strong> traduzida (PT ou EN — troque no botão de idioma no topo).</li>
+  <li>As <strong>recompensas</strong> (XP, moedas, pacotes, player picks, evoluções).</li>
+  <li>Uma etiqueta de <strong>progresso</strong> quando você já começou (ex.: "▶ 6/10 no jogo").</li>
+</ul>
+<h3>Filtros úteis</h3>
+<ul>
+  <li><strong>⏳ expira em 7d</strong> — mostra só o que está acabando, pra você priorizar.</li>
+  <li><strong>pular modos</strong> — desmarque os modos que você não joga (ex.: Rush) pra eles saírem das contas.</li>
+  <li><strong>🎯 montar otimizador</strong> — em qualquer categoria ou grupo, monta o plano só com aqueles objetivos.</li>
+</ul>
+
+<h2 id="otimizador">Aba Otimizador</h2>
+<p>É o coração da extensão. A partir dos objetivos selecionados, ela calcula:</p>
+<ul>
+  <li><strong>Plano de partidas</strong> — quantas partidas de cada modo você precisa, sem repetir esforço.</li>
+  <li><strong>Fases</strong> — divide o trabalho em etapas pra você ir completando aos poucos.</li>
+  <li><strong>Sugestão dos 11 titulares</strong> — que jogadores escalar (por nação, liga e posição) pra
+      cumprir vários objetivos de uma vez.</li>
+</ul>
+<p>Cada linha "conclui" é clicável e te leva direto ao objetivo correspondente na aba Objetivos.</p>
+<div class="card tip">💡 Os números já <strong>descontam o que você tem de progresso no jogo</strong>. Se você já
+ganhou 6 de 10 partidas, ele conta só as 4 que faltam.</div>
+
+<h2 id="sync">Sincronização (opcional)</h2>
+<p>Se você quiser, a extensão marca seus objetivos como concluídos em outros sites que você já usa. Há
+três modos, escolhidos na aba Objetivos:</p>
+<ul>
+  <li><strong>Desligado</strong> — não sincroniza nada (padrão).</li>
+  <li><strong>extensão → FUT.GG</strong> — envia suas conclusões pro FUT.GG.</li>
+  <li><strong>extensão → FUTBIN</strong> — envia suas conclusões pro FUTBIN (marca e desmarca).</li>
+</ul>
+<p>Escolha o modo e clique em <strong>sincronizar agora</strong>. Pra funcionar, você precisa estar logado
+no site escolhido.</p>
+
+<h2 id="privacidade">Privacidade</h2>
+<p><strong>Seus dados nunca saem do seu navegador.</strong> A extensão não tem servidor próprio, não coleta,
+não envia e não vende nada. Tudo fica salvo localmente no seu computador. As únicas conexões que ela faz
+são com FUT.GG, EA e FUTBIN — os mesmos sites que você já usa — e só pra ler os objetivos e sincronizar o
+que você pediu. Detalhes na <a href="privacy.html">Política de Privacidade</a>.</p>
+
+<h2 id="duvidas">Dúvidas comuns</h2>
+<h3>O botão "Importar do Jogo" não fez nada</h3>
+<p>Confira se o EA Web App está <strong>aberto e logado</strong> numa aba antes de clicar. Depois tente de novo.</p>
+<h3>Aparecem objetivos que eu já completei</h3>
+<p>Use o <strong>🎮 reimportar</strong> pra atualizar o que está concluído no jogo — a importação sobrescreve
+com o que é verdade no jogo.</p>
+<h3>Um objetivo diz "9 partidas" mas não fala o modo</h3>
+<p>Isso significa "qualquer modo" — pode jogar no modo que preferir; a extensão já considera que essas
+partidas podem sair junto com as de outros objetivos.</p>
+<h3>É pago?</h3>
+<p>Está <strong>grátis</strong> (Beta). É um projeto independente feito por um fã. Não é afiliado nem
+endossado pela Electronic Arts, FUT.GG ou FUTBIN. EA FC e Ultimate Team são marcas da Electronic Arts Inc.</p>
+
+<div class="foot">
+  Otimizador de Objetivos EAFC · Manual de uso (Beta) ·
+  <a href="index.html">Página inicial</a> · <a href="privacy.html">Privacidade</a>
+</div>
+
+</body>
+</html>
