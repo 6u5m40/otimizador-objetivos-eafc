@@ -1,5 +1,8 @@
 {
   "appName": {
     "message": "Otimizador de Objetivos EAFC"
+  },
+  "appDesc": {
+    "message": "Leia os objetivos do EA FC, monte o checklist e descubra a melhor combinação de partidas para completar tudo mais rápido."
   }
 }
