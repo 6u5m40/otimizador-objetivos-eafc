@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Otimizador de Objetivos EAFC",
-  "version": "1.0.7",
-  "description": "Le os objetivos do EA FC (FUT.GG) e monta o checklist + a melhor combinacao de time para completar tudo no menor numero de partidas.",
+  "name": "__MSG_appName__",
+  "version": "1.0.8",
+  "description": "__MSG_appDesc__",
   "default_locale": "pt_BR",
   "permissions": ["storage", "sidePanel", "scripting", "activeTab", "tabs"],
   "host_permissions": [
